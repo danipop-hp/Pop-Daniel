@@ -6,7 +6,6 @@ comenzi = ["guias", "ceafa", "ceafa", "papanasi", "ceafa"]  # coada FIFO
 tavi = ["tava"] * 7  # stiva LIFO
 istoric_comenzi = []
 
-
 for i in range(len(studenti)):
     if not studenti or not comenzi or not tavi:
         break
@@ -23,7 +22,6 @@ s_au_comandat = {"guias": 0, "ceafa": 0, "papanasi": 0}
 for _, comanda in istoric_comenzi:
     s_au_comandat[comanda] += 1
 
-
 print(f"S-au comandat {s_au_comandat['guias']} guias, {s_au_comandat['ceafa']} ceafa, {s_au_comandat['papanasi']} papanasi.")
 
 
@@ -37,13 +35,13 @@ stocuri = {
     "guias": meniu.count("guias")
 }
 
-print(f"Mai este ceafa: {stocuri['ceafa'] > 0}.")
+print(f"Mai este ceafa: {stocuri['ceafa'] < 0}.")
 print(f"Mai sunt papanasi: {stocuri['papanasi'] > 0}.")
 print(f"Mai sunt guias: {stocuri['guias'] > 0}.")
 
 
 total_incasat = 0
-for  comanda in istoric_comenzi:
+for student, comanda in istoric_comenzi:
     for produs in preturi:
         if comanda == produs[0]:
             total_incasat += produs[1]
