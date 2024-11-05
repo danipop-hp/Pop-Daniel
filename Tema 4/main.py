@@ -9,15 +9,13 @@ progres = ["_" for _ in cuvant_de_ghicit]
 incercari_ramase = 6
 litere_incercate = []
 
-# Afișarea șablonului inițial
 print("Ghiceste cuvântul:", " ".join(progres))
 
-# Bucla principală de joc
 while "_" in progres and incercari_ramase > 0:
-    # Cererea unei litere
+    
     guess = input("Introdu o literă: ").lower()
 
-    # Verificarea validității
+   
     if len(guess) != 1 or not guess.isalpha():
         print("Te rog să introduci o singură literă validă.")
         continue
@@ -28,7 +26,6 @@ while "_" in progres and incercari_ramase > 0:
 
     litere_incercate.append(guess)
 
-    # Verificarea literei în cuvânt
     if guess in cuvant_de_ghicit:
         for index, litera in enumerate(cuvant_de_ghicit):
             if litera == guess:
@@ -39,10 +36,8 @@ while "_" in progres and incercari_ramase > 0:
         print("Greșit! Litera nu se află în cuvânt.")
         print("Încercări rămase:", incercari_ramase)
 
-    # Afișarea progresului și încercărilor rămase
     print("Progres:", " ".join(progres))
 
-# Încheierea jocului
 if "_" not in progres:
     print("Felicitări! Ai ghicit cuvântul:", cuvant_de_ghicit)
 else:
